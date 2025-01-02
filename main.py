@@ -27,6 +27,7 @@ def main():
                 return
         #sets delta time to have 60fps
         dt = (fps.tick(60))/1000
+        user.update(dt)
 
 if __name__ == "__main__":
     main()
