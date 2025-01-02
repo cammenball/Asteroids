@@ -1,5 +1,7 @@
 import pygame
 from  constants import *
+from circleshape import *
+from player import *
 
 #create clock object to set framerate in main loop
 fps = pygame.time.Clock()
@@ -12,10 +14,12 @@ def main():
     print(f"Screen width: {SCREEN_WIDTH}")
     print(f"Screen height: {SCREEN_HEIGHT}")
     DISPLAY = pygame.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGHT))
+    user = Player((SCREEN_WIDTH/2),(SCREEN_HEIGHT/2))
 
     #infinite loop to continue game. first 2 lines paint the screen every loop
     while True:
-        DISPLAY.fill(0)
+        DISPLAY.fill((0,0,0))
+        user.draw(DISPLAY)
         pygame.display.flip()
         #checks if close button has been clicked
         for event in pygame.event.get():
